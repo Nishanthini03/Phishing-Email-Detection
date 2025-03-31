@@ -7,22 +7,25 @@ model = joblib.load("logistic_regression_model.pkl")
 vectorizer = joblib.load("vectorizer.pkl")  # Load the saved vectorizer
 
 # Streamlit UI
-st.title("Phishing Email Detector")
-st.write("Enter an email body to check if it's phishing or legitimate.")
+st.set_page_config(page_title="Phishing Email Detector", page_icon="🚨", layout="centered")
+st.title("🔍 Phishing Email Detector")
+st.markdown("## Detect Phishing Emails Instantly! 📨")
+st.write("Paste an email body below and find out if it's **phishing** or **legitimate**.")
 
 # Text input for email body
-email_text = st.text_area("Paste the email body here:")
+email_text = st.text_area("📩 Enter the email content:", height=200, placeholder="Paste the email text here...")
 
-if st.button("Check Email"):
-    if email_text:
+# Add a stylish button
+if st.button("🚀 Check Now", use_container_width=True):
+    if email_text.strip():
         # Convert input text to TF-IDF representation
         email_tfidf = vectorizer.transform([email_text])
 
         # Make prediction
         prediction = model.predict(email_tfidf)[0]
-        result = "Phishing Email 🛑" if prediction == 1 else "Legitimate Email ✅"
+        result = "🛑 **Phishing Email**! Be cautious." if prediction == 1 else "✅ **Legitimate Email**. No threats detected."
 
-        # Display result
-        st.markdown(f"### Prediction: {result}")
+        # Display result with color emphasis
+        st.success(result) if prediction == 0 else st.error(result)
     else:
-        st.warning("Please enter an email body.")
+        st.warning("⚠️ Please enter an email body to analyze.")
