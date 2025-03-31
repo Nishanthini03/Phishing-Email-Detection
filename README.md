@@ -5,8 +5,11 @@ This is a Phishing Email Detection web app built with Streamlit. It allows users
 🔥 Features
 
 ✅ Detect phishing emails based on body content
+
 ✅ User-friendly web UI with Streamlit
+
 ✅ Generates word clouds and email pattern analysis
+
 ✅ Sharable link via Streamlit Community Cloud
 
 🛠 Installation
