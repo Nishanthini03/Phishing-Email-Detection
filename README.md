@@ -25,6 +25,8 @@ pip install -r requirements.txt
 streamlit run app.py
 This will open the app in your browser at http://localhost:8501/.
 
+
+
 🚀 Deployment on Streamlit Community Cloud
 
 Steps to Deploy:
@@ -35,10 +37,16 @@ Click "New App" → Select your GitHub repository
 Set the main file as app.py
 Click "Deploy" → Get a public link 🎉
 
+
 📊 Dataset
+
 The model is trained using real & synthetic phishing emails, including:
+
 CEAS_08.csv (Real-world phishing emails)
+
 Synthetic dataset (AI-generated phishing templates)
+
 Each email contains:
+
 Sender, Receiver, Date, Subject, Body, URL Count, Label (Phishing/Legit)
 
