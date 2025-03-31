@@ -23,9 +23,11 @@ if st.button("🚀 Check Now", use_container_width=True):
 
         # Make prediction
         prediction = model.predict(email_tfidf)[0]
-        result = "🛑 **Phishing Email**! Be cautious." if prediction == 1 else "✅ **Legitimate Email**. No threats detected."
-
+        
         # Display result with color emphasis
-        st.success(result) if prediction == 0 else st.error(result)
+        if prediction == 1:
+            st.error("🛑 **Phishing Email**! Be cautious.")
+        else:
+            st.success("✅ **Legitimate Email**. No threats detected.")
     else:
         st.warning("⚠️ Please enter an email body to analyze.")
