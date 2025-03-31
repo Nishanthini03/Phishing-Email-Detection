@@ -1,10 +1,10 @@
 ﻿# Phishing-Email-Detection
 
-This is a Phishing Email Detection web app built with Streamlit. It allows users to enter an email body to check if it is a phishing email or legitimate using a trained machine learning model.
+This is a Phishing Email Detection web app built with Streamlit. It allows users to enter an email subject and body to check if it is a phishing email or legitimate using a trained machine learning model.
 
 🔥 Features
 
-✅ Detect phishing emails based on body content
+✅ Detect phishing emails based on subject and body content
 
 ✅ User-friendly web UI with Streamlit
 
